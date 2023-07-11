@@ -1,0 +1,26 @@
+{
+  "name": "komodo/store",
+  "description": "A simple storage class",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.1.3",
+    "komodo/logger": "dev-main",
+    "komodo/map": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "Komodo\\Store\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jhonnata Nascimento da Paixão",
+      "email": "114832000+jhownpaixao@users.noreply.github.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "9.6.x-dev"
+  }
+}

@@ -24,17 +24,18 @@ class Store
     private $log;
     private Logger $logger;
     public Map $store;
-    function __construct($path = './store', $file = 'store.json')
+    function __construct($path = './store', $file = 'store.json', $logger = null)
     {
         $this->path = $path;
         $this->file = $file;
+        $this->logger = $logger ?: new Logger;
         $this->init();
     }
 
     public function init()
     {
         $this->store = new Map;
-        $this->logger = new Logger;
+
         $this->log = $this->path . '/' . $this->file;
         $this->logger->register('\\Komodo\\Logger');
         $this->logger->debug($this->file, 'Starting store');

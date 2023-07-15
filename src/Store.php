@@ -28,7 +28,8 @@ class Store
     {
         $this->path = $path;
         $this->file = $file;
-        $this->logger = $logger ?: new Logger;
+        $this->logger = $logger ? clone $logger : new Logger;
+
         $this->init();
     }
 
@@ -37,7 +38,7 @@ class Store
         $this->store = new Map;
 
         $this->log = $this->path . '/' . $this->file;
-        $this->logger->register('\\Komodo\\Logger');
+        $this->logger->register('Komodo\\Store');
         $this->logger->debug($this->file, 'Starting store');
         $this->readerFileStore();
     }
